@@ -1,0 +1,85 @@
+.button{
+    padding:10px 30px;
+     background: white;
+      border: none;
+       outline: 1px solid black;
+        cursor: pointer;
+        transition: 0.2s;
+}
+
+.button:hover{
+    scale: 1.1;
+    box-shadow: 3px 3px black;
+}
+
+.button:active{
+     scale: 1;
+    box-shadow: 5px 5px black;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    margin: 0px 20px !important;
+  }
+  .hero-section {
+    margin: 0px 5% !important;
+    padding: 20px 20px !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 60vh !important;
+  }
+  .hero-content {
+    width: 100% !important;
+  }
+  .hero-title-1 {
+    font-size: 36px !important;
+    margin-bottom: 15px !important;
+  }
+  .hero-title-2 {
+    font-size: 36px !important;
+    margin-bottom: 10px !important;
+  }
+  .hero-title-3 {
+    font-size: 48px !important;
+  }
+  .hero-paragraph {
+    line-height: 28px !important;
+  }
+  .about-container {
+    flex-direction: column !important;
+  }
+  .about-section {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0px 20px !important;
+    border-right: none !important;
+  }
+  .about-paragraph {
+    line-height: 28px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    margin: 0px 40px !important;
+  }
+  .hero-section {
+    margin: 0px 7% !important;
+    padding: 25px 35px !important;
+  }
+  .hero-title-1 {
+    font-size: 48px !important;
+  }
+  .hero-title-2 {
+    font-size: 48px !important;
+  }
+  .hero-title-3 {
+    font-size: 64px !important;
+  }
+  .about-section {
+    margin-left: 40px !important;
+    margin-right: 40px !important;
+    padding: 0px 40px !important;
+  }
+}
