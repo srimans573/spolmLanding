@@ -32,14 +32,7 @@ export default function Home() {
       <div className="hidden md:block absolute right-3 lg:right-5 top-0 bottom-0 w-px bg-foreground/[0.06]" />
 
       {/* Horizontal lines */}
-      <div className="hidden md:block absolute left-0 right-0 top-[60px] h-px bg-foreground/[0.06]" />
       <div className="hidden md:block absolute left-0 right-0 bottom-[36px] h-px bg-foreground/[0.06]" />
-
-      {/* Intersection squares — centered on each intersection */}
-      {/* Top-left */}
-      <div className="hidden md:block absolute left-3 lg:left-5 top-[60px] w-3 h-3 -translate-x-1/2 -translate-y-1/2 border border-foreground/[0.12] bg-background" />
-      {/* Top-right */}
-      <div className="hidden md:block absolute right-3 lg:right-5 top-[60px] w-3 h-3 translate-x-1/2 -translate-y-1/2 border border-foreground/[0.12] bg-background" />
       {/* Bottom-left */}
       <div className="hidden md:block absolute left-3 lg:left-5 bottom-[36px] w-3 h-3 -translate-x-1/2 translate-y-1/2 border border-foreground/[0.12] bg-background" />
       {/* Bottom-right */}

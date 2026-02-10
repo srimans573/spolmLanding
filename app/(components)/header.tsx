@@ -10,7 +10,7 @@ export default function Navbar() {
   }, [light]);
 
   return (
-    <nav className="w-full flex items-center justify-between px-6 md:px-16 py-4 md:py-6">
+    <nav className="w-full flex items-center justify-between px-6 md:px-16 md:py-4">
       {/* Brand */}
       <span className="font-serif text-lg tracking-tight">
         <span
