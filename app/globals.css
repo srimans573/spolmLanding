@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --muted: #666666;
+  --dim: #999999;
+  --border: #1a1a1a;
+  --coral: #ff6f61;
+}
+
+.light {
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --muted: #888888;
+  --dim: #666666;
+  --border: #e5e5e5;
+  --coral: #ff6f61;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-border: var(--border);
+  --color-coral: var(--coral);
+  --font-serif: var(--font-libre-baskerville);
+  --font-sans: var(--font-poppins);
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Footnote number */
+.fn {
+  font-family: var(--font-libre-baskerville), serif;
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.fn:hover {
+  color: var(--coral);
+}
+
+/* Bracket styling for nav links */
+.bracket-link {
+  position: relative;
+  padding: 0 2px;
+}
+
+.bracket-link::before {
+  content: "[";
+  margin-right: 4px;
+  color: var(--muted);
+}
+
+.bracket-link::after {
+  content: "]";
+  margin-left: 4px;
+  color: var(--muted);
+}
