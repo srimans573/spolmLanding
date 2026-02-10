@@ -40,7 +40,7 @@ export default function Navbar() {
           Join Us
         </a>
         <a
-          href="#"
+          href="https://cal.com/srirammanikandan/15min?user=srirammanikandan"
           className="font-sans text-xs text-foreground hover:text-dim transition-colors"
         >
           Book a Demo

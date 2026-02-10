@@ -46,7 +46,7 @@ export default function Home() {
         <section className="w-full md:w-1/2 flex flex-col justify-center px-6 py-12 md:pl-16 md:pr-12 md:py-0">
           <p className="my-3">[ in private beta ]</p>
           <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1] tracking-tight mb-6 md:mb-8">
-            Experential Learning for
+            Contextual Learning for
             <br />
             <span className="text-coral">AI Agents</span>
           </h1>
@@ -59,7 +59,7 @@ export default function Home() {
 
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://cal.com/srirammanikandan/15min?user=srirammanikandan"
               className="font-sans text-xs text-background bg-foreground px-6 py-3 hover:opacity-90 transition-opacity"
             >
               Book a Demo →
