@@ -1,17 +1,27 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville, Poppins } from "next/font/google";
+import { Libre_Baskerville, Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const libreBaskerville = Libre_Baskerville({
-  variable: "--font-libre-baskerville",
+  variable: "--font-serif",
   subsets: ["latin"],
   weight: ["400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 const poppins = Poppins({
-  variable: "--font-poppins",
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${libreBaskerville.variable} ${poppins.variable} antialiased`}
+        className={`${libreBaskerville.variable} ${poppins.variable} ${jetbrainsMono.variable}`}
       >
         {children}
       </body>
