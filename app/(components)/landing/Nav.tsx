@@ -14,20 +14,11 @@ export default function Nav() {
     }
   }, []);
 
-  const toggleTheme = () => {
-    const next = theme === 'light' ? 'dark' : 'light';
-    setTheme(next);
-    localStorage.setItem('spolm-theme', next);
-    document.documentElement.setAttribute('data-theme', next === 'dark' ? 'dark' : '');
-  };
 
   return (
     <header className="nav">
       <a href="#" className="nav__brand">spolm</a>
       <nav className="nav__links">
-        <span className="bracket nav__toggle" role="button" onClick={toggleTheme}>
-          {theme}
-        </span>
         <a className="nav__link" href="#features">Features</a>
         <a className="nav__link" href="#docs">Docs</a>
         <Link className="nav__link" href="/careers">Join Us</Link>
