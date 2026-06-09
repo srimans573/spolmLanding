@@ -7,6 +7,7 @@ import LoopDemo from './demos/LoopDemo';
 export default function PipelineSection() {
   const rootRef = useRef<HTMLElement>(null);
 
+
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;

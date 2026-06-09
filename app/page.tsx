@@ -6,6 +6,70 @@ import PipelineSection from './(components)/landing/PipelineSection';
 const DEMO_LINK = 'https://cal.com/srirammanikandan/15min?user=srirammanikandan';
 const GITHUB_REPO = 'https://github.com/tryspolm';
 
+function TokenIllustration() {
+  return (
+    <svg width="100%" height="84" viewBox="0 0 200 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="100" y="11" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#A8A199" letterSpacing="1.5">COST PER RUN</text>
+      <rect x="16" y="20" width="24" height="52" rx="3" fill="#FCE2D9"/>
+      <rect x="56" y="32" width="24" height="40" rx="3" fill="#F5C9B8"/>
+      <rect x="96" y="46" width="24" height="26" rx="3" fill="#E8654D" opacity="0.6"/>
+      <rect x="136" y="58" width="24" height="14" rx="3" fill="#E8654D"/>
+      <path d="M28 24 L68 36 L108 50 L148 62" stroke="#E8654D" strokeWidth="1.5" strokeDasharray="4 2.5" strokeLinecap="round"/>
+      <path d="M144 57 L148 62 L152 57" stroke="#E8654D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function FailureIllustration() {
+  return (
+    <svg width="100%" height="84" viewBox="0 0 200 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="44" y="14" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#A8A199" letterSpacing="1.5">BEFORE</text>
+      <circle cx="16" cy="42" r="7" fill="#F5D7D2"/><circle cx="16" cy="42" r="4" fill="#D24A3C"/>
+      <circle cx="38" cy="42" r="7" fill="#CFEEDF"/><circle cx="38" cy="42" r="4" fill="#14946A"/>
+      <circle cx="60" cy="42" r="7" fill="#F5D7D2"/><circle cx="60" cy="42" r="4" fill="#D24A3C"/>
+      <circle cx="82" cy="42" r="7" fill="#F5D7D2"/><circle cx="82" cy="42" r="4" fill="#D24A3C"/>
+
+      <path d="M98 42 L112 42" stroke="#D4CBB9" strokeWidth="1" strokeLinecap="round"/>
+      <path d="M108 37 L113 42 L108 47" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+      <text x="158" y="14" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#14946A" letterSpacing="1.5">AFTER</text>
+      <circle cx="124" cy="42" r="7" fill="#CFEEDF"/><circle cx="124" cy="42" r="4" fill="#14946A"/>
+      <circle cx="146" cy="42" r="7" fill="#CFEEDF"/><circle cx="146" cy="42" r="4" fill="#14946A"/>
+      <circle cx="168" cy="42" r="7" fill="#CFEEDF"/><circle cx="168" cy="42" r="4" fill="#14946A"/>
+      <circle cx="190" cy="42" r="7" fill="#CFEEDF"/><circle cx="190" cy="42" r="4" fill="#14946A"/>
+
+      <text x="100" y="74" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#14946A" letterSpacing="0.5">failures drop as memories accumulate</text>
+    </svg>
+  );
+}
+
+function IntegrationIllustration() {
+  return (
+    <svg width="100%" height="84" viewBox="0 0 200 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="28" width="44" height="28" rx="4" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="26" y="40" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#A8A199">your</text>
+      <text x="26" y="51" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#3A3530" fontWeight="500">agent</text>
+
+      <path d="M50 42 L64 42" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M60 37 L65 42 L60 47" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+      <rect x="66" y="22" width="48" height="40" rx="5" fill="#FCE2D9" stroke="#E8654D" strokeWidth="1.5"/>
+      <text x="90" y="38" textAnchor="middle" fontFamily="monospace" fontSize="11" fill="#E8654D" fontWeight="700">spolm</text>
+      <text x="90" y="52" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#C24330">sdk</text>
+
+      <path d="M116 42 L130 42" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M126 37 L131 42 L126 47" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+      <rect x="132" y="12" width="64" height="17" rx="3" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="164" y="24" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#6E6862">framework #1</text>
+      <rect x="132" y="33" width="64" height="17" rx="3" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="164" y="45" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#6E6862">framework #2</text>
+      <rect x="132" y="54" width="64" height="17" rx="3" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="164" y="66" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#6E6862">custom agent</text>
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <div className="landing">
@@ -39,26 +103,29 @@ export default function Home() {
       {/* ─── TRACE ─── */}
       <PipelineSection />
 
-      {/* ─── COMMUNITY + CTA ─── */}
+      {/* ─── USE CASES + CTA ─── */}
       <section className="tl-community">
         <div className="tl-use__head">
-          <h2 className="tl-section__title">Hear from the Community.</h2>
+          <h2 className="tl-section__title">Built for what agents actually need.</h2>
         </div>
         <div className="tl-use__grid">
           <UseCard
-            tag="California State Waterboard"
-            quote="It fit exactly where we needed it in our environmental data workflow. The Spolm team are always working to make the experience as seamless as possible."
-            author="Dan Wang"
+            tag="cost"
+            title="Fewer tokens, same results."
+            body="Spolm surfaces what your agent already knows from past runs, so it stops re-deriving context from scratch every time. Token costs fall as the knowledge base grows."
+            illustration={<TokenIllustration />}
           />
           <UseCard
-            tag="Alexys.ai"
-            quote="Our token costs dropped significantly once the agent started retrieving context from Spolm instead of re-deriving it every run. The savings were immediate."
-            author="Founding Team"
+            tag="reliability"
+            title="Failures teach the next run."
+            body="Warnings and lessons from failed runs are stored and injected as context before the next run. Your agent learns what to avoid without any code changes."
+            illustration={<FailureIllustration />}
           />
           <UseCard
-            tag="Builders From Berkeley"
-            quote="The barrier to entry through LangChain is genuinely low. I had it running in an afternoon. But the depth of analysis on the platform surprised me."
-            author="Aryan S."
+            tag="integration"
+            title="Works with your stack."
+            body="Seamless integration into LangChain, OpenAI ADK, or custom agents, with more adapters coming soon. No architecture changes, no new infrastructure to manage on your end."
+            illustration={<IntegrationIllustration />}
           />
         </div>
         <div className="tl-cta__box">
