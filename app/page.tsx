@@ -1,14 +1,74 @@
 import Nav from './(components)/landing/Nav';
 import Footer from './(components)/landing/Footer';
-import StatStrip from './(components)/landing/StatStrip';
-import MiniTrace from './(components)/landing/MiniTrace';
 import UseCard from './(components)/landing/UseCard';
-import TraceDemo from './(components)/landing/demos/TraceDemo';
-import RubricDemo from './(components)/landing/demos/RubricDemo';
-import LoopDemo from './(components)/landing/demos/LoopDemo';
+import PipelineSection from './(components)/landing/PipelineSection';
 
 const DEMO_LINK = 'https://cal.com/srirammanikandan/15min?user=srirammanikandan';
-const GITHUB_REPO = 'https://github.com/Tanrocode/spolm';
+const GITHUB_REPO = 'https://github.com/tryspolm';
+
+function TokenIllustration() {
+  return (
+    <svg width="100%" height="84" viewBox="0 0 200 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="100" y="11" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#A8A199" letterSpacing="1.5">COST PER RUN</text>
+      <rect x="16" y="20" width="24" height="52" rx="3" fill="#FCE2D9"/>
+      <rect x="56" y="32" width="24" height="40" rx="3" fill="#F5C9B8"/>
+      <rect x="96" y="46" width="24" height="26" rx="3" fill="#E8654D" opacity="0.6"/>
+      <rect x="136" y="58" width="24" height="14" rx="3" fill="#E8654D"/>
+      <path d="M28 24 L68 36 L108 50 L148 62" stroke="#E8654D" strokeWidth="1.5" strokeDasharray="4 2.5" strokeLinecap="round"/>
+      <path d="M144 57 L148 62 L152 57" stroke="#E8654D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+function FailureIllustration() {
+  return (
+    <svg width="100%" height="84" viewBox="0 0 200 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="44" y="14" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#A8A199" letterSpacing="1.5">BEFORE</text>
+      <circle cx="16" cy="42" r="7" fill="#F5D7D2"/><circle cx="16" cy="42" r="4" fill="#D24A3C"/>
+      <circle cx="38" cy="42" r="7" fill="#CFEEDF"/><circle cx="38" cy="42" r="4" fill="#14946A"/>
+      <circle cx="60" cy="42" r="7" fill="#F5D7D2"/><circle cx="60" cy="42" r="4" fill="#D24A3C"/>
+      <circle cx="82" cy="42" r="7" fill="#F5D7D2"/><circle cx="82" cy="42" r="4" fill="#D24A3C"/>
+
+      <path d="M98 42 L112 42" stroke="#D4CBB9" strokeWidth="1" strokeLinecap="round"/>
+      <path d="M108 37 L113 42 L108 47" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+      <text x="158" y="14" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#14946A" letterSpacing="1.5">AFTER</text>
+      <circle cx="124" cy="42" r="7" fill="#CFEEDF"/><circle cx="124" cy="42" r="4" fill="#14946A"/>
+      <circle cx="146" cy="42" r="7" fill="#CFEEDF"/><circle cx="146" cy="42" r="4" fill="#14946A"/>
+      <circle cx="168" cy="42" r="7" fill="#CFEEDF"/><circle cx="168" cy="42" r="4" fill="#14946A"/>
+      <circle cx="190" cy="42" r="7" fill="#CFEEDF"/><circle cx="190" cy="42" r="4" fill="#14946A"/>
+
+      <text x="100" y="74" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#14946A" letterSpacing="0.5">failures drop as memories accumulate</text>
+    </svg>
+  );
+}
+
+function IntegrationIllustration() {
+  return (
+    <svg width="100%" height="84" viewBox="0 0 200 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="28" width="44" height="28" rx="4" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="26" y="40" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#A8A199">your</text>
+      <text x="26" y="51" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#3A3530" fontWeight="500">agent</text>
+
+      <path d="M50 42 L64 42" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M60 37 L65 42 L60 47" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+      <rect x="66" y="22" width="48" height="40" rx="5" fill="#FCE2D9" stroke="#E8654D" strokeWidth="1.5"/>
+      <text x="90" y="38" textAnchor="middle" fontFamily="monospace" fontSize="11" fill="#E8654D" fontWeight="700">spolm</text>
+      <text x="90" y="52" textAnchor="middle" fontFamily="monospace" fontSize="7.5" fill="#C24330">sdk</text>
+
+      <path d="M116 42 L130 42" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M126 37 L131 42 L126 47" stroke="#D4CBB9" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+      <rect x="132" y="12" width="64" height="17" rx="3" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="164" y="24" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#6E6862">framework #1</text>
+      <rect x="132" y="33" width="64" height="17" rx="3" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="164" y="45" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#6E6862">framework #2</text>
+      <rect x="132" y="54" width="64" height="17" rx="3" fill="#FAF7F2" stroke="#E6DFD2" strokeWidth="1"/>
+      <text x="164" y="66" textAnchor="middle" fontFamily="monospace" fontSize="8" fill="#6E6862">custom agent</text>
+    </svg>
+  );
+}
 
 export default function Home() {
   return (
@@ -17,180 +77,70 @@ export default function Home() {
 
       {/* ─── HERO ─── */}
       <section className="tl-hero">
-        <div className="tl-hero__top">
-          <div className="tl-hero__left">
-            <div className="bracket">private beta · v0.4</div>
-            <h1 className="tl-hero__title">
-              Agents that <em>learn</em><br />
-              from every run.
-            </h1>
-            <p className="tl-hero__lede">
-              The contextual-learning layer for AI agents.
-              We ingest your production telemetry, score every run, and write what
-              works into a memory your agents read before the next one.
-            </p>
-            <div className="tl-hero__cta">
-              <a href={DEMO_LINK} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
-                Book a Demo →
-              </a>
-              <a href={GITHUB_REPO} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-                GitHub
-              </a>
-            </div>
-            <StatStrip
-              items={[
-                { num: '8,924',   lbl: 'runs analyzed last 30d' },
-                { num: '247',     lbl: 'lessons learned' },
-                { num: '+24%',    lbl: 'mean accuracy lift' },
-                { num: '−61%',    lbl: 'repeated-mistake rate' },
-                { num: '4 lines', lbl: 'to instrument' },
-              ]}
-            />
-          </div>
-          <div className="tl-hero__right">
-            <MiniTrace />
+        <div className="tl-hero__inner">
+          <div className="bracket">now live! · v1.0</div>
+          <h1 className="tl-hero__title">
+            Agents that <em>learn</em><br />
+            from every run.
+          </h1>
+          <p className="tl-hero__lede">
+            The open-source contextual learning layer for your agents.
+          </p>
+          <div className="tl-hero__cta">
+            <a href={DEMO_LINK} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
+              Book a Demo →
+            </a>
+            <a href={GITHUB_REPO} className="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              GitHub
+            </a>
           </div>
         </div>
       </section>
 
       {/* ─── TRACE ─── */}
-      <section id="features" className="tl-section">
-        <div className="tl-section__head">
-          <div className="tl-section__num">01</div>
-          <div className="tl-section__h">
-            <div className="bracket">trace</div>
-            <h2 className="tl-section__title">See every step the agent took.</h2>
-            <p className="tl-section__lede">
-              A timeline of every reasoning call, tool invocation, and result —
-              with full inputs, outputs, and timing. Replayable, queryable,
-              framework-agnostic.
-            </p>
-          </div>
-        </div>
-        <div className="tl-section__demo">
-          <TraceDemo height={520} />
-        </div>
-      </section>
+      <PipelineSection />
 
-      {/* ─── SCORE ─── */}
-      <section className="tl-section tl-section--bg">
-        <div className="tl-section__head">
-          <div className="tl-section__num">02</div>
-          <div className="tl-section__h">
-            <div className="bracket">score</div>
-            <h2 className="tl-section__title">Every run gets a grade and a diagnosis.</h2>
-            <p className="tl-section__lede">
-              Configurable rubrics evaluate the run end-to-end. Spolm pinpoints
-              what went right, what went wrong, and writes a root-cause summary
-              traced to the exact step that broke.
-            </p>
-          </div>
-        </div>
-        <div className="tl-section__demo">
-          <RubricDemo height={520} />
-        </div>
-      </section>
-
-      {/* ─── LEARN ─── */}
-      <section className="tl-section">
-        <div className="tl-section__head">
-          <div className="tl-section__num">03</div>
-          <div className="tl-section__h">
-            <div className="bracket">learn</div>
-            <h2 className="tl-section__title">Yesterday&apos;s failure is today&apos;s context.</h2>
-            <p className="tl-section__lede">
-              Successful and failed decision patterns get written to a knowledge base
-              ranked by accuracy. Before each run, the agent retrieves the most
-              relevant lessons — and adapts strategy pre-emptively.
-            </p>
-          </div>
-        </div>
-        <div className="tl-section__demo">
-          <LoopDemo height={480} />
-        </div>
-      </section>
-
-      {/* ─── QUICKSTART ─── */}
-      <section className="tl-section tl-section--bg">
-        <div className="tl-quick">
-          <div className="tl-quick__left">
-            <div className="bracket">04 · quickstart</div>
-            <h2 className="tl-section__title"><em>Four lines</em> to instrument.</h2>
-            <p className="tl-section__lede">
-              Drop the SDK into your agent loop. Spolm tails your runs, scores them,
-              and exposes a single <code>retrieve()</code> call that returns
-              relevant context for the next prompt.
-            </p>
-            <ul className="tl-quick__list">
-              <li>Works with LangChain, LlamaIndex, AutoGen, or a custom loop.</li>
-              <li>OpenTelemetry-compatible. Hosted or self-hosted.</li>
-              <li>SOC&nbsp;2 in progress. PII redaction on by default.</li>
-            </ul>
-          </div>
-
-          <div className="tl-quick__code">
-            <div className="tl-code-head">
-              <span className="bracket">python · agent.py</span>
-              <span className="bracket">copy</span>
-            </div>
-            <pre className="tl-code">
-              <span className="tl-c">{`# 1. wrap your run`}</span>{`\n`}
-              <span className="tl-k">from</span>{` spolm `}<span className="tl-k">import</span>{` Spolm\n`}
-              {`sp = Spolm(api_key=`}<span className="tl-s">{`"sk-…"`}</span>{`)\n\n`}
-              <span className="tl-c">{`# 2. retrieve learned context before each run`}</span>{`\n`}
-              {`ctx = sp.`}<span className="tl-fn">retrieve</span>{`(task=`}<span className="tl-s">{`"reply to email"`}</span>{`)\n\n`}
-              <span className="tl-c">{`# 3. instrument the run`}</span>{`\n`}
-              <span className="tl-k">with</span>{` sp.`}<span className="tl-fn">run</span>{`(task) `}<span className="tl-k">as</span>{` r:\n`}
-              {`    result = agent.`}<span className="tl-fn">invoke</span>{`(task, context=ctx)\n`}
-              {`    r.`}<span className="tl-fn">log_result</span>{`(result)\n\n`}
-              <span className="tl-c">{`# 4. spolm scores it, stores the lessons, ranks them`}</span>{`\n`}
-              <span className="tl-c">{`#    next retrieve() gets smarter automatically.`}</span>
-            </pre>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── USE CASES ─── */}
-      <section className="tl-use">
+      {/* ─── USE CASES + CTA ─── */}
+      <section className="tl-community">
         <div className="tl-use__head">
-          <div className="bracket">built for</div>
-          <h2 className="tl-section__title">Teams shipping AI agents in production.</h2>
+          <h2 className="tl-section__title">Built for what agents actually need.</h2>
         </div>
         <div className="tl-use__grid">
           <UseCard
-            tag="customer support"
-            title="Triage that improves with every ticket."
-            body="Catch reasoning loops, hand-off mistakes, and tone drift before they reach customers. Tighter every week, no retraining."
+            tag="cost"
+            title="Fewer tokens, same results."
+            body="Spolm surfaces what your agent already knows from past runs, so it stops re-deriving context from scratch every time. Token costs fall as the knowledge base grows."
+            illustration={<TokenIllustration />}
           />
           <UseCard
-            tag="research & retrieval"
-            title="Stop relitigating the same query."
-            body="When one agent navigates a knowledge base for a query, the next inherits the path. Lower tokens, faster answers."
+            tag="reliability"
+            title="Failures teach the next run."
+            body="Warnings and lessons from failed runs are stored and injected as context before the next run. Your agent learns what to avoid without any code changes."
+            illustration={<FailureIllustration />}
           />
           <UseCard
-            tag="dev tools"
-            title="Coding agents that remember your repo."
-            body="Naming, internal APIs, test idioms — learned once, applied across every PR. The agent stops re-introducing the same bugs."
+            tag="integration"
+            title="Works with your stack."
+            body="Seamless integration into LangChain, OpenAI ADK, or custom agents, with more adapters coming soon. No architecture changes, no new infrastructure to manage on your end."
+            illustration={<IntegrationIllustration />}
           />
         </div>
-      </section>
-
-      {/* ─── FINAL CTA ─── */}
-      <section className="tl-cta">
-        <div className="bracket">we&apos;re in private beta</div>
-        <h2 className="tl-cta__h">
-          See it on your <em>own</em> agents.
-        </h2>
-        <div className="tl-cta__row">
-          <a href={DEMO_LINK} className="btn btn--accent btn--lg" target="_blank" rel="noopener noreferrer">
-            Book a 15-min demo →
-          </a>
-          <a href="#join" className="btn btn--ghost btn--lg">
-            Join the waitlist
-          </a>
+        <div className="tl-cta__box">
+          <h2 className="tl-cta__h">See it on your own agents.</h2>
+          <div className="tl-cta__row">
+            <a href={DEMO_LINK} className="btn btn--accent btn--lg" target="_blank" rel="noopener noreferrer">
+              Book a demo →
+            </a>
+            <a href={GITHUB_REPO} className="btn btn--ghost btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              GitHub
+            </a>
+          </div>
         </div>
       </section>
 
